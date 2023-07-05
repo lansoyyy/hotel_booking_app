@@ -14,9 +14,10 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   int selectedIndex = 0;
 
-  String selected = 'Restaurants';
+  String selected = 'Beach';
 
   List filters = [
+    {'name': 'Beach', 'icon': Icons.beach_access_outlined},
     {'name': 'Restaurants', 'icon': Icons.restaurant_menu_outlined},
     {'name': 'Hotels', 'icon': Icons.hotel_outlined},
     {'name': 'Tourist Spots', 'icon': Icons.landscape_outlined},
