@@ -63,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                 height: 10,
               ),
               SizedBox(
-                height: 125,
+                height: 75,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
@@ -86,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                                   size: 28,
                                 ),
                                 const SizedBox(
-                                  height: 15,
+                                  height: 5,
                                 ),
                                 TextWidget(
                                   text: 'Restaurant',
@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 5,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -135,19 +135,35 @@ class HomeScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        child: Container(
-                          width: 140,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            gradient: const LinearGradient(
-                                colors: [
-                                  Colors.transparent,
-                                  Colors.black54,
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                stops: [0.7, 1]),
-                          ),
+                        child: Stack(
+                          children: [
+                            Container(
+                              width: 140,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                image: const DecorationImage(
+                                    image: AssetImage(
+                                      'assets/images/sample.jpg',
+                                    ),
+                                    fit: BoxFit.cover),
+                              ),
+                            ),
+                            Container(
+                              width: 140,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: const LinearGradient(
+                                    colors: [
+                                      Colors.transparent,
+                                      Colors.black38,
+                                      Colors.black54,
+                                    ],
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    stops: [0.5, 0.8, 1]),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     );
@@ -174,45 +190,62 @@ class HomeScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        child: Container(
-                          width: 200,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            gradient: const LinearGradient(
-                                colors: [
-                                  Colors.transparent,
-                                  Colors.black54,
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                stops: [0.7, 1]),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Container(
-                                    height: 25,
-                                    width: 75,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(100),
-                                      color: Colors.amber,
+                        child: Stack(
+                          children: [
+                            Container(
+                              width: 200,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                image: const DecorationImage(
+                                    image: AssetImage(
+                                      'assets/images/sample2.jpg',
                                     ),
-                                    child: Center(
-                                      child: TextWidget(
-                                        fontFamily: 'Bold',
-                                        text: '25% OFF',
-                                        fontSize: 12,
-                                        color: Colors.white,
+                                    fit: BoxFit.cover),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: Column(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Container(
+                                        height: 25,
+                                        width: 75,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          color: Colors.amber,
+                                        ),
+                                        child: Center(
+                                          child: TextWidget(
+                                            fontFamily: 'Bold',
+                                            text: '25% OFF',
+                                            fontSize: 12,
+                                            color: Colors.white,
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
-                          ),
+                            Container(
+                              width: 200,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: const LinearGradient(
+                                    colors: [
+                                      Colors.transparent,
+                                      Colors.black54,
+                                      Colors.black54,
+                                    ],
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    stops: [0.5, 0.8, 1]),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     );
