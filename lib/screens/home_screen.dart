@@ -138,7 +138,7 @@ class HomeScreen extends StatelessWidget {
                         child: Stack(
                           children: [
                             Container(
-                              width: 140,
+                              width: 150,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                                 image: const DecorationImage(
@@ -149,18 +149,94 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              width: 140,
+                              width: 150,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                                 gradient: const LinearGradient(
                                     colors: [
                                       Colors.transparent,
                                       Colors.black38,
-                                      Colors.black54,
+                                      Colors.black,
                                     ],
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                     stops: [0.5, 0.8, 1]),
+                              ),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(5, 10, 5, 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    TextWidget(
+                                      text: 'White Island',
+                                      fontSize: 15,
+                                      color: Colors.white,
+                                      fontFamily: 'Bold',
+                                    ),
+                                    Row(
+                                      children: [
+                                        const Icon(
+                                          Icons.location_on_outlined,
+                                          color: Colors.white70,
+                                          size: 16,
+                                        ),
+                                        const SizedBox(
+                                          width: 2.5,
+                                        ),
+                                        TextWidget(
+                                          text: 'Camiguin',
+                                          fontSize: 12,
+                                          color: Colors.white70,
+                                          fontFamily: 'Bold',
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        RichText(
+                                          text: const TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text: 'P488/',
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontFamily: 'Bold',
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'night',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontFamily: 'Regular',
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const Expanded(
+                                          child: SizedBox(),
+                                        ),
+                                        const Icon(
+                                          Icons.star_rounded,
+                                          color: Colors.orange,
+                                          size: 18,
+                                        ),
+                                        TextWidget(
+                                          text: '4.5',
+                                          fontSize: 12,
+                                          color: Colors.white70,
+                                          fontFamily: 'Bold',
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
@@ -238,11 +314,97 @@ class HomeScreen extends StatelessWidget {
                                     colors: [
                                       Colors.transparent,
                                       Colors.black54,
-                                      Colors.black54,
+                                      Colors.black,
                                     ],
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                     stops: [0.5, 0.8, 1]),
+                              ),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(5, 10, 5, 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        TextWidget(
+                                          text: 'White Island',
+                                          fontSize: 15,
+                                          color: Colors.white,
+                                          fontFamily: 'Bold',
+                                        ),
+                                        const Expanded(
+                                          child: SizedBox(),
+                                        ),
+                                        const Icon(
+                                          Icons.star_rounded,
+                                          color: Colors.orange,
+                                          size: 18,
+                                        ),
+                                        TextWidget(
+                                          text: '4.5',
+                                          fontSize: 12,
+                                          color: Colors.white70,
+                                          fontFamily: 'Bold',
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 2,
+                                    ),
+                                    Row(
+                                      children: [
+                                        const Icon(
+                                          Icons.location_on_outlined,
+                                          color: Colors.white70,
+                                          size: 16,
+                                        ),
+                                        const SizedBox(
+                                          width: 2.5,
+                                        ),
+                                        TextWidget(
+                                          text: 'Camiguin',
+                                          fontSize: 12,
+                                          color: Colors.white70,
+                                          fontFamily: 'Bold',
+                                        ),
+                                        const Expanded(
+                                          child: SizedBox(),
+                                        ),
+                                        Row(
+                                          children: [
+                                            RichText(
+                                              text: const TextSpan(
+                                                children: [
+                                                  TextSpan(
+                                                    text: 'P488/',
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontFamily: 'Bold',
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text: 'night',
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      fontFamily: 'Regular',
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
