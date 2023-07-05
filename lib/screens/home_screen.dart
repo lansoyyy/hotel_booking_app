@@ -22,19 +22,40 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 28,
                     fontFamily: 'Bold',
                   ),
-                  Card(
-                    elevation: 3,
-                    shadowColor: Colors.grey,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(100),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(color: Colors.grey[300]!),
                     ),
                     child: IconButton(
                       onPressed: () {},
                       icon: const Icon(
                         Icons.search,
-                        color: Colors.black,
+                        color: Colors.grey,
                       ),
                     ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Icon(
+                    Icons.location_on_outlined,
+                    color: Colors.grey,
+                    size: 18,
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  TextWidget(
+                    text: 'Nazareth, Cagayan De Oro City',
+                    fontSize: 14,
+                    fontFamily: 'Medium',
+                    color: Colors.grey,
                   ),
                 ],
               ),
@@ -102,9 +123,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 10,
-              ),
               SizedBox(
                 height: 200,
                 child: ListView.builder(
@@ -143,9 +161,6 @@ class HomeScreen extends StatelessWidget {
                 text: 'Hot deals',
                 fontSize: 24,
                 fontFamily: 'Bold',
-              ),
-              const SizedBox(
-                height: 10,
               ),
               SizedBox(
                 height: 150,
