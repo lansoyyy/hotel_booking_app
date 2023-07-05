@@ -14,6 +14,18 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   int selectedIndex = 0;
 
+  List filters = [
+    {'name': 'Restaurants', 'icon': Icons.restaurant_menu_outlined},
+    {'name': 'Hotels', 'icon': Icons.hotel_outlined},
+    {'name': 'Tourist Spots', 'icon': Icons.landscape_outlined},
+    {'name': 'Resorts', 'icon': Icons.beach_access_outlined},
+    {'name': 'Museums', 'icon': Icons.museum_outlined},
+    {'name': 'Boarding House', 'icon': Icons.home_outlined},
+    {'name': 'Cafes', 'icon': Icons.local_cafe_outlined},
+    {'name': 'Bars', 'icon': Icons.local_bar_outlined},
+    {'name': 'Gyms', 'icon': Icons.fitness_center_outlined},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -72,8 +84,8 @@ class _HomeTabState extends State<HomeTab> {
             height: 75,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount:
-                  50, // Replace 'itemCount' with the total number of items in your list
+              itemCount: filters
+                  .length, // Replace 'itemCount' with the total number of items in your list
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(left: 7.5, right: 7.5),
@@ -99,7 +111,7 @@ class _HomeTabState extends State<HomeTab> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.landscape_outlined,
+                              filters[index]['icon'],
                               color: selectedIndex == index
                                   ? Colors.white
                                   : Colors.grey,
@@ -107,8 +119,8 @@ class _HomeTabState extends State<HomeTab> {
                             ),
                             const SizedBox(height: 5),
                             TextWidget(
-                              text: 'Tourist Spots',
-                              fontSize: 10,
+                              text: filters[index]['name'],
+                              fontSize: 9,
                               color: selectedIndex == index
                                   ? Colors.white
                                   : Colors.grey,
@@ -140,7 +152,7 @@ class _HomeTabState extends State<HomeTab> {
                   fontFamily: 'Bold',
                   text: 'See all',
                   fontSize: 14,
-                  color: Colors.blue,
+                  color: Colors.orange,
                 ),
               ),
             ],

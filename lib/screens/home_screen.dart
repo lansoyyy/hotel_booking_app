@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel/screens/tabs/fav_tab.dart';
-import 'package:hotel/screens/tabs/main_tab.dart';
+import 'package:hotel/screens/tabs/home_tab.dart';
 import 'package:hotel/screens/tabs/messages_tab.dart';
 import 'package:hotel/screens/tabs/profile_tab.dart';
 
