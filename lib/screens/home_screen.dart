@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Icon(
-                                  Icons.brunch_dining_rounded,
+                                  Icons.landscape_outlined,
                                   color: Colors.grey,
                                   size: 28,
                                 ),
@@ -89,8 +89,8 @@ class HomeScreen extends StatelessWidget {
                                   height: 5,
                                 ),
                                 TextWidget(
-                                  text: 'Restaurant',
-                                  fontSize: 11,
+                                  text: 'Tourist Spots',
+                                  fontSize: 10,
                                   color: Colors.grey,
                                   fontFamily: 'Medium',
                                 ),
@@ -108,7 +108,7 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextWidget(
-                    text: 'Popular Restaurants',
+                    text: 'Popular Tourist Spots',
                     fontSize: 24,
                     fontFamily: 'Bold',
                   ),
