@@ -14,6 +14,8 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   int selectedIndex = 0;
 
+  String selected = 'Restaurants';
+
   List filters = [
     {'name': 'Restaurants', 'icon': Icons.restaurant_menu_outlined},
     {'name': 'Hotels', 'icon': Icons.hotel_outlined},
@@ -94,6 +96,7 @@ class _HomeTabState extends State<HomeTab> {
                       // Update the selected index when an item is clicked
                       setState(() {
                         selectedIndex = index;
+                        selected = filters[index]['name'];
                       });
                     },
                     child: Container(
@@ -142,7 +145,7 @@ class _HomeTabState extends State<HomeTab> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextWidget(
-                text: 'Popular Tourist Spots',
+                text: 'Popular $selected',
                 fontSize: 24,
                 fontFamily: 'Bold',
               ),
