@@ -21,7 +21,7 @@ class _HomeTabState extends State<HomeTab> {
     {'name': 'Restaurants', 'icon': Icons.restaurant_menu_outlined},
     {'name': 'Hotels', 'icon': Icons.hotel_outlined},
     {'name': 'Tourist Spots', 'icon': Icons.landscape_outlined},
-    {'name': 'Resorts', 'icon': Icons.beach_access_outlined},
+    {'name': 'Resorts', 'icon': Icons.cottage_outlined},
     {'name': 'Museums', 'icon': Icons.museum_outlined},
     {'name': 'Boarding House', 'icon': Icons.home_outlined},
     {'name': 'Cafes', 'icon': Icons.local_cafe_outlined},

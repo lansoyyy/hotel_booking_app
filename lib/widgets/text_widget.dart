@@ -6,10 +6,14 @@ class TextWidget extends StatelessWidget {
   late Color? color;
   late String? fontFamily;
   late TextDecoration? decoration;
+  final int? maxlines;
+  final TextOverflow? overflow;
 
   TextWidget(
       {super.key,
       this.decoration,
+      this.maxlines,
+      this.overflow,
       required this.text,
       required this.fontSize,
       this.color = Colors.black,
@@ -19,6 +23,8 @@ class TextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      maxLines: maxlines,
+      overflow: overflow,
       style: TextStyle(
           decoration: decoration,
           fontSize: fontSize,
