@@ -293,7 +293,7 @@ class _BusinessPageState extends State<BusinessPage> {
                               height: 50,
                               width: 50,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12.5),
+                                borderRadius: BorderRadius.circular(5),
                                 image: const DecorationImage(
                                     image: AssetImage(
                                       'assets/images/sample.jpg',

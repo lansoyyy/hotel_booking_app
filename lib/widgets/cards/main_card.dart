@@ -93,7 +93,6 @@ class MainCard extends StatelessWidget {
                                     fontSize: 14,
                                     fontFamily: 'Bold',
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 TextSpan(
@@ -102,7 +101,6 @@ class MainCard extends StatelessWidget {
                                     fontSize: 12,
                                     fontFamily: 'Regular',
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ],
