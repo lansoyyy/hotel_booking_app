@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:hotel/utils/colors.dart';
 
 import '../../screens/pages/business_page.dart';
 import '../text_widget.dart';
 
 class SecondaryCard extends StatelessWidget {
-  const SecondaryCard({super.key});
+  final double? height;
+  final double? width;
+  final bool? inFav;
+
+  const SecondaryCard({
+    super.key,
+    this.height = double.infinity,
+    this.width = 200,
+    this.inFav = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 7.5, right: 7.5),
+      padding: const EdgeInsets.only(left: 7.5, right: 7.5, top: 5, bottom: 5),
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(
@@ -23,7 +33,8 @@ class SecondaryCard extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                width: 200,
+                height: height,
+                width: width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: const DecorationImage(
@@ -41,22 +52,34 @@ class SecondaryCard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              height: 25,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Colors.orange,
-                              ),
-                              child: Center(
-                                child: TextWidget(
-                                  fontFamily: 'Bold',
-                                  text: '25% OFF',
-                                  fontSize: 12,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
+                            inFav! == false
+                                ? Container(
+                                    height: 25,
+                                    width: 75,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100),
+                                      color: Colors.orange,
+                                    ),
+                                    child: Center(
+                                      child: TextWidget(
+                                        fontFamily: 'Bold',
+                                        text: '25% OFF',
+                                        fontSize: 12,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  )
+                                : const SizedBox(),
+                            inFav == false
+                                ? const SizedBox()
+                                : GestureDetector(
+                                    onTap: () {},
+                                    child: const Icon(
+                                      Icons.favorite_rounded,
+                                      size: 28,
+                                      color: primary,
+                                    ),
+                                  ),
                           ],
                         ),
                       ),
@@ -65,7 +88,8 @@ class SecondaryCard extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 200,
+                height: height,
+                width: width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   gradient: const LinearGradient(

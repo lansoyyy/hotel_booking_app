@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const HomeTab(),
     const FavTab(),
     const MessagesTab(),
+    const SizedBox(),
     const ProfileTab(),
   ];
 
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 30, 20, 30),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: tabs[_currentIndex])),
       bottomNavigationBar: BottomNavigationBar(
         selectedLabelStyle: const TextStyle(fontFamily: 'Bold', fontSize: 10),
@@ -63,6 +64,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: _currentIndex != 3
+                ? const Icon(Icons.bookmark_added_outlined)
+                : const Icon(Icons.bookmark_added_rounded),
+            label: 'Bookings',
+          ),
+          BottomNavigationBarItem(
+            icon: _currentIndex != 4
                 ? const Icon(Icons.account_circle_outlined)
                 : const Icon(Icons.account_circle),
             label: 'Profile',
