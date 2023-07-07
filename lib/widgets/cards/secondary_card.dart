@@ -9,17 +9,22 @@ class SecondaryCard extends StatelessWidget {
   final double? width;
   final bool? inFav;
 
+  final int index;
+
   const SecondaryCard({
     super.key,
     this.height = double.infinity,
     this.width = 200,
     this.inFav = false,
+    required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 7.5, right: 7.5, top: 5, bottom: 5),
+      padding: index == 0
+          ? const EdgeInsets.only(left: 0, right: 0, top: 5, bottom: 5)
+          : const EdgeInsets.only(left: 7.5, right: 7.5, top: 5, bottom: 5),
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(

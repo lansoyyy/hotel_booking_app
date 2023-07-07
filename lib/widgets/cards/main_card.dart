@@ -4,12 +4,19 @@ import 'package:hotel/screens/pages/business_page.dart';
 import '../text_widget.dart';
 
 class MainCard extends StatelessWidget {
-  const MainCard({super.key});
+  final int index;
+
+  const MainCard({
+    super.key,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 7.5, right: 7.5),
+      padding: index == 0
+          ? const EdgeInsets.only(left: 0, right: 0)
+          : const EdgeInsets.only(left: 7.5, right: 7.5),
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(

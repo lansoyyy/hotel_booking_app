@@ -80,7 +80,8 @@ class _FavTabState extends State<FavTab> {
           child: SizedBox(
             child: ListView.builder(
               itemBuilder: (context, index) {
-                return const SecondaryCard(
+                return SecondaryCard(
+                  index: index,
                   inFav: true,
                   height: 125,
                   width: double.infinity,

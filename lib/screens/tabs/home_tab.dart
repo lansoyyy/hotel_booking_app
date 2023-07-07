@@ -166,7 +166,9 @@ class _HomeTabState extends State<HomeTab> {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const MainCard();
+                return MainCard(
+                  index: index,
+                );
               },
             ),
           ),
@@ -183,7 +185,9 @@ class _HomeTabState extends State<HomeTab> {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const SecondaryCard();
+                return SecondaryCard(
+                  index: index,
+                );
               },
             ),
           ),
