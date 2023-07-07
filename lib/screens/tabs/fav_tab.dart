@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotel/widgets/cards/secondary_card.dart';
 
 import '../../widgets/text_widget.dart';
+import '../pages/all_business_page.dart';
 
 class FavTab extends StatefulWidget {
   const FavTab({super.key});
@@ -63,7 +64,10 @@ class _FavTabState extends State<FavTab> {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const AllBusinessPage()));
+              },
               child: TextWidget(
                 fontFamily: 'Bold',
                 text: 'View more',

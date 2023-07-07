@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel/screens/pages/all_business_page.dart';
 
 import '../../widgets/cards/main_card.dart';
 import '../../widgets/cards/secondary_card.dart';
@@ -151,7 +152,10 @@ class _HomeTabState extends State<HomeTab> {
                 fontFamily: 'Bold',
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const AllBusinessPage()));
+                },
                 child: TextWidget(
                   fontFamily: 'Bold',
                   text: 'See all',

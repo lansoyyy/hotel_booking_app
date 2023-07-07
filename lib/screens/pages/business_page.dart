@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hotel/widgets/text_widget.dart';
 
 import '../../widgets/button_widget.dart';
@@ -21,8 +24,15 @@ class _BusinessPageState extends State<BusinessPage> {
     {'name': 'Fitness Classes', 'icon': Icons.fitness_center_outlined}
   ];
 
+  final Completer<GoogleMapController> _controller =
+      Completer<GoogleMapController>();
+
   @override
   Widget build(BuildContext context) {
+    const CameraPosition kGooglePlex = CameraPosition(
+      target: LatLng(37.42796133580664, -122.085749655962),
+      zoom: 14.4746,
+    );
     return Scaffold(
       body: Stack(
         children: [
@@ -48,28 +58,30 @@ class _BusinessPageState extends State<BusinessPage> {
                           Navigator.pop(context);
                         },
                         child: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[100]!.withOpacity(0.5),
                             shape: BoxShape.circle,
                           ),
                           child: const Padding(
                             padding: EdgeInsets.all(5.0),
                             child: Icon(
                               Icons.arrow_back,
+                              color: Colors.black,
                             ),
                           ),
                         ),
                       ),
                       const Expanded(child: SizedBox()),
                       Container(
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[100]!.withOpacity(0.5),
                           shape: BoxShape.circle,
                         ),
                         child: const Padding(
                           padding: EdgeInsets.all(5.0),
                           child: Icon(
                             Icons.share,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -77,14 +89,15 @@ class _BusinessPageState extends State<BusinessPage> {
                         width: 20,
                       ),
                       Container(
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[100]!.withOpacity(0.5),
                           shape: BoxShape.circle,
                         ),
                         child: const Padding(
                           padding: EdgeInsets.all(5.0),
                           child: Icon(
                             Icons.favorite_border,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -274,6 +287,41 @@ class _BusinessPageState extends State<BusinessPage> {
                               );
                             },
                           ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextWidget(
+                          text: 'Location',
+                          fontSize: 18,
+                          color: Colors.black,
+                          fontFamily: 'Bold',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        // Map
+                        SizedBox(
+                          height: 150,
+                          child: GoogleMap(
+                            mapType: MapType.hybrid,
+                            initialCameraPosition: kGooglePlex,
+                            onMapCreated: (GoogleMapController controller) {
+                              _controller.complete(controller);
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        TextWidget(
+                          maxlines: readMore ? 5 : null,
+                          overflow: readMore ? TextOverflow.ellipsis : null,
+                          text:
+                              'Sint laboris minim est et in sit eiusmod. Velit pariatur amet incididunt occaecat veniam est enim nisi occaecat nostrud non.',
+                          fontSize: 12,
+                          fontFamily: 'Regular',
+                          color: Colors.grey,
                         ),
                         const SizedBox(
                           height: 20,
