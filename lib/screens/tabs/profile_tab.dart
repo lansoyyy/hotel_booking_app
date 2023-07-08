@@ -8,35 +8,46 @@ class ProfileTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const SizedBox(),
-            Container(
-              height: 35,
-              width: 80,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(100),
-                border: Border.all(
-                  color: Colors.grey[200]!,
+        const SizedBox(
+          height: 10,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextWidget(
+                text: 'Profile',
+                fontSize: 24,
+                color: Colors.grey,
+                fontFamily: 'Bold',
+              ),
+              Container(
+                height: 35,
+                width: 80,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(
+                    color: Colors.grey[200]!,
+                  ),
+                ),
+                child: TextButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.edit_outlined,
+                    size: 16,
+                    color: Colors.grey,
+                  ),
+                  label: TextWidget(
+                    text: 'Edit',
+                    fontSize: 12,
+                    color: Colors.grey,
+                  ),
                 ),
               ),
-              child: TextButton.icon(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.edit_outlined,
-                  size: 16,
-                  color: Colors.grey,
-                ),
-                label: TextWidget(
-                  text: 'Edit',
-                  fontSize: 12,
-                  color: Colors.grey,
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
         const SizedBox(
           height: 30,
@@ -47,7 +58,7 @@ class ProfileTab extends StatelessWidget {
               color: Colors.white,
               shape: BoxShape.circle,
               border: Border.all(
-                color: Colors.grey,
+                color: Colors.grey[200]!,
               ),
             ),
             child: Padding(

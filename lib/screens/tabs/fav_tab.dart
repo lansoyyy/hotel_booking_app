@@ -13,6 +13,7 @@ class FavTab extends StatefulWidget {
 
 class _FavTabState extends State<FavTab> {
   final searchController = TextEditingController();
+  String namedSearch = '';
 
   String selected = 'Beach & Resorts';
 
@@ -30,17 +31,46 @@ class _FavTabState extends State<FavTab> {
 
   int selectedIndex = 0;
 
-  String namedSearch = '';
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(
+          height: 10,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TextWidget(
+              text: 'Favorites',
+              fontSize: 24,
+              color: Colors.grey,
+              fontFamily: 'Bold',
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const AllBusinessPage()));
+              },
+              child: TextWidget(
+                text: 'View More',
+                fontSize: 14,
+                color: Colors.orange,
+                fontFamily: 'Bold',
+              ),
+            )
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-              width: 300,
-              height: 40,
+              width: 350,
+              height: 45,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(5),
@@ -77,16 +107,6 @@ class _FavTabState extends State<FavTab> {
                         : const SizedBox(),
                     border: InputBorder.none,
                     hintText: 'Search'),
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const AllBusinessPage()));
-              },
-              icon: const Icon(
-                Icons.visibility_outlined,
-                color: Colors.grey,
               ),
             ),
           ],

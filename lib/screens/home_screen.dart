@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List tabs = [
     const HomeTab(),
     const FavTab(),
-    const MessagesTab(),
+    MessagesTab(),
     const HistoryTab(),
     const ProfileTab(),
   ];

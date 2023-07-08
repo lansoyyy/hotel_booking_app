@@ -9,10 +9,18 @@ class HistoryTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(
+          height: 10,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const SizedBox(),
+            TextWidget(
+              text: 'History',
+              fontSize: 24,
+              color: Colors.grey,
+              fontFamily: 'Bold',
+            ),
             Container(
               height: 35,
               width: 80,
