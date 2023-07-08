@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel/screens/tabs/fav_tab.dart';
+import 'package:hotel/screens/tabs/history_tab.dart';
 import 'package:hotel/screens/tabs/home_tab.dart';
 import 'package:hotel/screens/tabs/messages_tab.dart';
 import 'package:hotel/screens/tabs/profile_tab.dart';
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const HomeTab(),
     const FavTab(),
     const MessagesTab(),
-    const SizedBox(),
+    const HistoryTab(),
     const ProfileTab(),
   ];
 
@@ -33,7 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              padding: _currentIndex == 4
+                  ? const EdgeInsets.fromLTRB(0, 10, 0, 0)
+                  : const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: tabs[_currentIndex])),
       bottomNavigationBar: BottomNavigationBar(
         selectedLabelStyle: const TextStyle(fontFamily: 'Bold', fontSize: 10),
@@ -64,9 +67,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: _currentIndex != 3
-                ? const Icon(Icons.bookmark_added_outlined)
-                : const Icon(Icons.bookmark_added_rounded),
-            label: 'Bookings',
+                ? const Icon(Icons.history)
+                : const Icon(Icons.history),
+            label: 'History',
           ),
           BottomNavigationBarItem(
             icon: _currentIndex != 4

@@ -17,15 +17,14 @@ class _AllBusinessPageState extends State<AllBusinessPage> {
 
   int selectedIndex = 0;
 
-  String selected = 'Beach';
+  String selected = 'Beach & Resorts';
 
   List filters = [
-    {'name': 'Beach', 'icon': Icons.beach_access_outlined},
-    {'name': 'Restaurants', 'icon': Icons.restaurant_menu_outlined},
-    {'name': 'Hotels', 'icon': Icons.hotel_outlined},
+    {'name': 'Beach & Resorts', 'icon': Icons.beach_access_outlined},
+    {'name': 'Dining', 'icon': Icons.restaurant_menu_outlined},
+    {'name': 'Hotels & Condo', 'icon': Icons.hotel_outlined},
     {'name': 'Spa & Massage', 'icon': Icons.spa_outlined},
     {'name': 'Tourist Spots', 'icon': Icons.landscape_outlined},
-    {'name': 'Resorts', 'icon': Icons.cottage_outlined},
     {'name': 'Boarding House', 'icon': Icons.home_outlined},
     {'name': 'Cafes', 'icon': Icons.local_cafe_outlined},
     {'name': 'Bars', 'icon': Icons.local_bar_outlined},
