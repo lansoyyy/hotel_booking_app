@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotel/screens/home_screen.dart';
+import 'package:hotel/screens/auth/get_started_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomeScreen(),
+      home: GetStartedScreen(),
     );
   }
 }

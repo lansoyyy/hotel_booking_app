@@ -8,11 +8,13 @@ class TextWidget extends StatelessWidget {
   late TextDecoration? decoration;
   final int? maxlines;
   final TextOverflow? overflow;
+  final FontWeight? fw;
 
   TextWidget(
       {super.key,
       this.decoration,
       this.maxlines,
+      this.fw,
       this.overflow,
       required this.text,
       required this.fontSize,
@@ -26,6 +28,7 @@ class TextWidget extends StatelessWidget {
       maxLines: maxlines,
       overflow: overflow,
       style: TextStyle(
+          fontWeight: fw,
           decoration: decoration,
           fontSize: fontSize,
           color: color,
