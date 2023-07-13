@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel/screens/auth/login_screen.dart';
 import 'package:hotel/widgets/button_widget.dart';
 import 'package:hotel/widgets/text_widget.dart';
 
@@ -45,7 +46,7 @@ class GetStartedScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(
-                    height: 50,
+                    height: 20,
                   ),
                   TextWidget(
                     fw: FontWeight.w900,
@@ -61,6 +62,22 @@ class GetStartedScreen extends StatelessWidget {
                     color: Colors.black,
                     fontFamily: 'Bold',
                   ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  SizedBox(
+                    width: 225,
+                    child: TextWidget(
+                      text:
+                          'Ea excepteur cupidatat ipsum qui amet id ut commodo cillum. Ea excepteur cupidatat ipsum.',
+                      fontSize: 12,
+                      color: Colors.grey,
+                      fontFamily: 'Medium',
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
                   const Expanded(
                     child: SizedBox(
                       height: 50,
@@ -69,7 +86,10 @@ class GetStartedScreen extends StatelessWidget {
                   ButtonWidget(
                     radius: 15,
                     label: 'Get Started',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => const LoginScreen()));
+                    },
                   ),
                   const SizedBox(
                     height: 25,
