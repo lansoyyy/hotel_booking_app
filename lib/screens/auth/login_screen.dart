@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel/screens/auth/signup_screen.dart';
 import 'package:hotel/widgets/button_widget.dart';
 import 'package:hotel/widgets/text_widget.dart';
 
@@ -23,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 150,
+                height: 100,
               ),
               TextWidget(
                 fw: FontWeight.w900,
@@ -108,7 +109,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontFamily: 'Medium',
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const SignupScreen()));
+                    },
                     child: TextWidget(
                       color: Colors.orange,
                       text: 'Signup Here',
