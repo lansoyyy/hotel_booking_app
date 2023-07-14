@@ -184,7 +184,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     Center(
                       child: ButtonWidget(
-                        width: 350,
+                        radius: 100,
+                        width: 300,
                         label: 'Signup',
                         onPressed: () {},
                       ),

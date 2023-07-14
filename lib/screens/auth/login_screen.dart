@@ -91,6 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 30,
               ),
               ButtonWidget(
+                width: 300,
                 height: 55,
                 radius: 100,
                 label: 'Login',
