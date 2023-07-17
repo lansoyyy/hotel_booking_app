@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel/screens/auth/signup_screen.dart';
+import 'package:hotel/screens/home_screen.dart';
 import 'package:hotel/widgets/button_widget.dart';
 import 'package:hotel/widgets/text_widget.dart';
 
@@ -95,7 +96,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 55,
                 radius: 100,
                 label: 'Login',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const HomeScreen()));
+                },
               ),
               const SizedBox(
                 height: 20,
