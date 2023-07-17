@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/button_widget.dart';
 import '../../widgets/text_widget.dart';
 
 class HistoryTab extends StatelessWidget {
@@ -32,7 +33,9 @@ class HistoryTab extends StatelessWidget {
                 ),
               ),
               child: TextButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  clearHistoryDialog(context);
+                },
                 icon: const Icon(
                   Icons.clear,
                   size: 16,
@@ -229,5 +232,89 @@ class HistoryTab extends StatelessWidget {
         )
       ],
     );
+  }
+
+  clearHistoryDialog(context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(
+                    Icons.warning_amber_rounded,
+                    color: Colors.red,
+                    size: 125,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextWidget(
+                        color: Colors.red,
+                        text: 'Wait a minute!',
+                        fontSize: 28,
+                        fontFamily: 'Bold',
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      TextWidget(
+                        text: 'Are you sure you want to',
+                        fontSize: 15,
+                        fontFamily: 'Medium',
+                      ),
+                      TextWidget(
+                        text: 'clear your history?',
+                        fontSize: 15,
+                        fontFamily: 'Medium',
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  MaterialButton(
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                        side: const BorderSide(
+                          color: Colors.red,
+                        ),
+                        borderRadius: BorderRadius.circular(5)),
+                    minWidth: 225,
+                    height: 50,
+                    color: Colors.transparent,
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: TextWidget(
+                        text: 'Cancel', fontSize: 18, color: Colors.red),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ButtonWidget(
+                      color: Colors.red,
+                      width: 225,
+                      label: 'Yes',
+                      onPressed: () async {
+                        // await FirebaseAuth.instance
+                        //     .signOut();
+                        Navigator.of(context).pop();
+                      }),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
   }
 }
