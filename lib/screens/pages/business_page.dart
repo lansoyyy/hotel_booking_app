@@ -111,7 +111,7 @@ class _BusinessPageState extends State<BusinessPage> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                height: 555,
+                height: 475,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   color: Colors.white,
