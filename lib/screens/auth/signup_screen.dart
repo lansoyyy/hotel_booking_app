@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel/screens/home_screen.dart';
 
 import '../../utils/colors.dart';
 import '../../widgets/button_widget.dart';
@@ -187,7 +188,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         radius: 100,
                         width: 300,
                         label: 'Signup',
-                        onPressed: () {},
+                        onPressed: () {
+                          signupDialog(context);
+                        },
                       ),
                     ),
                     const SizedBox(
@@ -201,5 +204,63 @@ class _SignupScreenState extends State<SignupScreen> {
         ),
       ),
     );
+  }
+
+  signupDialog(context) {
+    showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) {
+          return Dialog(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(
+                    Icons.check_circle_outline_rounded,
+                    color: Colors.green,
+                    size: 125,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextWidget(
+                        text: 'You have succesfully',
+                        fontSize: 15,
+                        fontFamily: 'Medium',
+                      ),
+                      TextWidget(
+                        text: 'signed up!',
+                        fontSize: 15,
+                        fontFamily: 'Medium',
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ButtonWidget(
+                      color: Colors.green,
+                      width: 225,
+                      label: 'Continue',
+                      onPressed: () async {
+                        // await FirebaseAuth.instance
+                        //     .signOut();
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => const HomeScreen()));
+                      }),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
   }
 }
